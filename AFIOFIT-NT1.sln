@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIOFIT-NT1", "AFIOFIT-NT1\AFIOFIT-NT1.csproj", "{3859BBE3-1F49-4DA0-80DE-6F89D63C131B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3859BBE3-1F49-4DA0-80DE-6F89D63C131B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3859BBE3-1F49-4DA0-80DE-6F89D63C131B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3859BBE3-1F49-4DA0-80DE-6F89D63C131B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3859BBE3-1F49-4DA0-80DE-6F89D63C131B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7206AC39-D750-4565-B5EC-62516F2F6732}
+	EndGlobalSection
+EndGlobal
