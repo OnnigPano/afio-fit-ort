@@ -8,14 +8,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AFIOFIT_NT1.Models
 {
-    public class AfioContext : IdentityDbContext<IdentityUser>
+    public class AfioContext : IdentityDbContext<ApplicationUser>
     {
         public AfioContext(DbContextOptions<AfioContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Curso> Cursos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
