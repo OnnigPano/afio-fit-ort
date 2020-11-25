@@ -18,5 +18,6 @@ namespace AFIOFIT_NT1.Models
         public double Descuento { get; set; }
         [Required]
         public Categoria Categoria { get; set; }
+        public ICollection<UsuarioCurso> Usuarios { set; get; }
     }
 }

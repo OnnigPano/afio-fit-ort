@@ -4,14 +4,16 @@ using AFIOFIT_NT1.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AFIOFIT_NT1.Migrations.AfioDb
 {
     [DbContext(typeof(AfioDbContext))]
-    partial class AfioDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201124214300_RelationshipMigration")]
+    partial class RelationshipMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,22 +103,15 @@ namespace AFIOFIT_NT1.Migrations.AfioDb
 
             modelBuilder.Entity("AFIOFIT_NT1.Models.UsuarioCurso", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("UsuarioId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CursoId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UsuarioId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
+                    b.HasKey("UsuarioId", "CursoId");
 
                     b.HasIndex("CursoId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("UsuarioCurso");
                 });
@@ -131,7 +126,9 @@ namespace AFIOFIT_NT1.Migrations.AfioDb
 
                     b.HasOne("AFIOFIT_NT1.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Cursos")
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

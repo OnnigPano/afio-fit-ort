@@ -8,6 +8,6 @@ namespace AFIOFIT_NT1.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public string Nombre { get; set; }
+        public ICollection<UsuarioCurso> Cursos { set; get; }
     }
 }
